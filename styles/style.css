@@ -1,0 +1,134 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.notebook-container {
+    display: flex;
+    justify-content: center;
+}
+
+.notebook-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 900px;
+    gap: 10px;
+}
+
+.notebook-input {
+    width: 600px;
+    min-height: 300px;
+    resize: none;
+}
+
+.add-note {
+    width: 300px;
+    background-color: rgb(132, 182, 184);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.remove-input {
+    width: 300px;
+    background-color: rgb(255, 44, 44);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.notebook-data:empty {
+    display: none;
+}
+
+.notebook-data {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    background-color: rgb(241, 241, 241);
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 20px;
+    min-width: 500px;
+}
+
+/* effects */
+
+.add-note:hover {
+    cursor: pointer;
+    background-color: rgb(6, 104, 108);
+}
+
+.remove-input:hover, .remove-note:hover {
+    cursor: pointer;
+    background-color: rgb(111, 11, 11);
+}
+
+.remove-input:active, .add-note:active {
+    transform: scale(0.9);
+}
+
+/* js style */
+
+.remove-note {
+    background-color: rgb(255, 44, 44);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    
+    display: block; 
+    margin: 0 auto 40px auto; 
+    
+    position: relative;
+    width: 200px;
+}
+
+.remove-note::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250%;
+    height: 1px;
+    background-color: black;
+}
+
+.notebook-data li {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    text-align: left;
+    width: 100%;
+}
+
+/* reponsitive */
+
+@media (max-width: 600px) {
+    .notebook-input {
+        width: 300px;
+    }
+
+    .notebook-data {
+        min-width: 300px;
+    }
+
+    .remove-note::after {
+        /* underline width */
+        width: 150%;
+    }
+}
